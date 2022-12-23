@@ -20,8 +20,7 @@ for (var i = 0; i < histories.length; i++) {
  $("#add-history").on("click", function(event) {
 
   event.preventDefault();
-
-  var history = $('#history-input').val().trim();
+    var history = $('#history-input').val().trim();
   histories.push(history);
 
   renderButtons();

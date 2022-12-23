@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <!-- <link rel="stylesheet" href="styles/reset.css" /> -->
+  <link rel="stylesheet" href="styles/reset.css" />
   <link href="/assets/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -14,44 +14,104 @@
 
 <body>
   <header class="container-fluid text-center text-white bg-dark p-2 weather-header">
-    <h1>Weather Dashboard</h1>
+    <h1>Shannon's Weather Dashboard</h1>
   </header>
 
-  <!-- max-width for ultra wide resolutions -->
 
-  <!-- ========= LEFT SIDE ========= -->
-  <div class="container-fluid" style="max-width: 1400px">
+  <div class="container-fluid">
     <div class="row">
-      <aside class="col-lg-3 pb-3">
-        <h2 id="form-heading" class="mt-1 h4 form-label">
+      <!-- === LEFT === PART === -->
+      <div class="col-md-3 bg-success min-vh-100" id="left">
+        <h4 id="form-heading" class="mt-1 form-label">
           Search for a City:
-        </h2>
-        <!-- SEARCH AREA -->
-        <form id="search-form" class="form">
-                <!-- SEARCH FIELD -->
-              <input class="weather-search form-input col-3 mb-2" type="text" id="history-input" placeholder="City"
-                aria-labelledby="form-heading" aria-controls="today forecast"/>
-              <div class="input-group-append"></div>
-                <!-- BUTTON -->
-                <button type="submit" class="search-button btn btn-info btn-sm col-3" id="add-history" aria-label="submit search">
-                  Search
-                </button>
-                <hr class="hr weather-hr" />
-          </div>
-        </form>
+        </h4>
+        <!-- Search Field -->
+        <input class="weather-search form-input mb-2 col-8" type="text" id="history-input" placeholder="City"
+          aria-labelledby="form-heading" aria-controls="today forecast">
+        <!-- Search Button -->
+        <button type="submit" class="search-button btn btn-info btn-sm col-3" id="add-history"
+          aria-label="submit search">
+          Search
+        </button>
 
         <!-- SEARCH HISTORY -->
-        <!-- search history will be added -->
-        
-        <div id="history-view" class="list-group btn btn-info col-3">
+        <!-- search history will be added here -->
+
+        <div id="history-view" class="list-group btn btn-info col-11">
 
         </div>
-      </aside>
 
-      <!-- ========= RIGHT SIDE ========= -->
-      <div class="col-lg-9 pb-3">
-        <section id="today" class="mt-3" role="region" aria-live="polite"></section>
-        <section id="forecast" class="row mt-3" role="region" aria-live="polite"></section>
+
+      </div>
+
+      <div class="col-md-9 d-flex flex-column">
+        <div class="row flex-grow-1">
+          <!-- === RIGHT === PART 1 === -->
+          <div class="col-md-12 bg-primary min-vh-50" id="righttop">
+
+          </div>
+          <!-- === RIGHT === PART 2 === -->
+          <div class="col-md-12 bg-warning min-vh-75" id="rightbottom">
+            <div class="row bg-info">
+              <h4>5-Day Forecast:</h4>
+            </div>
+            <!-- Card Deck -->
+            <div class="card-deck">
+              <!-- Day 1 -->
+              <div class="card">
+                <img class="card-img-top" src="https://picsum.photos/200/200" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="date-1">date+1</h5>
+                  <p class="temp">temp</p>
+                  <p class="wind">wind</p>
+                  <p class="humidity">humidity</p>
+                </div>
+              </div>
+              <!-- Day 2 -->
+              <div class="card">
+                <img class="card-img-top" src="https://picsum.photos/200/200" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="date-2">date+2</h5>
+                  <p class="temp">temp</p>
+                  <p class="wind">wind</p>
+                  <p class="humidity">humidity</p>
+                </div>
+              </div>
+              <!-- Day 3 -->
+              <div class="card">
+                <img class="card-img-top" src="https://picsum.photos/200/200" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="date-3">date+3</h5>
+                  <p class="temp">temp</p>
+                  <p class="wind">wind</p>
+                  <p class="humidity">humidity</p>
+                </div>
+              </div>
+              <!-- Day 4 -->
+              <div class="card">
+                <img class="card-img-top" src="https://picsum.photos/200/200" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="date-4">date+4</h5>
+                  <p class="temp">temp</p>
+                  <p class="wind">wind</p>
+                  <p class="humidity">humidity</p>
+                </div>
+              </div>
+              <!-- Day 5 -->
+              <div class="card">
+                <img class="card-img-top" src="https://picsum.photos/200/200" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="date-5">date+5</h5>
+                  <p class="temp">temp</p>
+                  <p class="wind">wind</p>
+                  <p class="humidity">humidity</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <section id="today" class="mt-3" role="region" aria-live="polite"></section>
+        </div>
       </div>
     </div>
   </div>
