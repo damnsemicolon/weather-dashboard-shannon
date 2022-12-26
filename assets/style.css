@@ -1,3 +1,9 @@
 #today {
     border: 1px solid #111111;
 }
+
+#history-view {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }

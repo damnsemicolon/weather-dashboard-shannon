@@ -24,11 +24,49 @@ for (var i = 0; i < histories.length; i++) {
   histories.push(history);
 
   renderButtons();
-
  });
 
  // Calling the renderButtons function to display the initial list of histories
  renderButtons();
 
+ //  =================
+//  ==== API KEY ====
+//  =================
 
- 
+var APIKey = "b8ab8ad20877efa01fd8d4e1f506d0f7";
+
+// URL for querying the database
+
+var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=hong%20kong&units=metic&appid=" + APIKey;
+
+// Here we run our AJAX call to the OpenWeatherMap API
+$.ajax({
+  url: queryURL,
+  method: "GET"
+})
+  // We store all of the retrieved data inside of an object called "response"
+  .then(function(response) {
+
+    // Log the queryURL
+    console.log(queryURL);
+
+    // Log the resulting object
+    console.log(response);
+
+      // Transfer content to HTML
+      $(".result-city").html("<h1>" + response.city.name + " Weather Details</h1>");
+      // Convert the temperature to Celsius
+      var tempC = response.list[0].main.temp - 273.15;
+      // add temperature content to html
+      $(".result-tempC").text("Temperature (C) " + tempC.toFixed(1) + "°C");      
+      // add humidity content to html
+      $(".result-humidity").text("Humidity: " + response.list[0].main.humidity + "%");
+      // add wind speed content to html
+      $(".result-wind").text("Wind Speed: " + response.list[0].wind.speed + " KPH");
+
+  
+      // Log the data in the console as well
+      console.log("Wind Speed: " + response.wind.speed);
+      console.log("Humidity: " + response.main.humidity);
+      console.log("Temperature (C): " + tempC);
+    });
