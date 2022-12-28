@@ -21,7 +21,7 @@
   <div class="container-fluid">
     <div class="row">
       <!-- === LEFT === PART === -->
-      <div class="col-md-3 bg-success min-vh-100" id="left">
+      <div class="col-md-3 bg-light min-vh-100" id="left">
         <h4 id="form-heading" class="mt-1 form-label">
           Search for a City:
         </h4>
@@ -42,10 +42,10 @@
         </div>
 
       </div>
-
+      <!-- === RIGHT === PART === -->
       <div class="col-md-9 d-flex flex-column">
         <div class="row flex-grow-1">
-          <!-- === RIGHT === PART 1 === -->
+          <!-- === RIGHT === UPPER === -->
           <div class="col-md-12 bg-light min-vh-50" id="righttop">
          
                 <div class="result-city"></div>
@@ -55,9 +55,9 @@
                 <div class="result-wind"></div>
                 
           </div>
-          <!-- === RIGHT === PART 2 === -->
-          <div class="col-md-12 min-vh-50" id="rightbottom">
-            <div class="row bg-info">
+          <!-- === RIGHT === LOWER === -->
+          <div class="col-md-12 bg-light min-vh-50" id="rightbottom">
+            <div class="row">
               <h4>5-Day Forecast:</h4>
             </div>
             <!-- Card Deck -->
@@ -120,7 +120,9 @@
       </div>
     </div>
   </div>
-
+  <footer class="bg-info text-center p-1">
+    <h5 class="text-white">Designed with 🤯 &copy; Shannon Yap 2022</h5>
+  </footer>
   <!-- Moment.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
   <!-- jQuery -->
