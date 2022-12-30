@@ -1,8 +1,28 @@
-#today {
-    border: 1px solid #111111;
+
+
+/* CSS */
+.history-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 30px;
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 10px;
+  color: #fff;
+  background: #007bff;
+  background-origin: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-button {
-    width: 100%;
-    margin: 10px 0;
-  }
+.history-btn:hover {
+    background: #0275d8;
+    background-origin: border-box;
+}
+#right-top {
+    border: solid 1px black;
+    margin-bottom: 20px;
+}

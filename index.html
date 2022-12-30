@@ -5,10 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <!-- <link rel="stylesheet" href="styles/reset.css" />
-  <link href="/assets/style.css"> -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/style.css" />
   <title>Shannon's Weather Dashboard</title>
 </head>
 
@@ -21,23 +20,20 @@
   <div class="container-fluid">
     <div class="row">
       <!-- === LEFT === PART === -->
-      <div class="col-md-3 bg-light min-vh-100" id="left">
+      <div class="col-md-3 min-vh-100" id="left">
         <h4 id="form-heading" class="mt-1 form-label">
           Search for a City:
         </h4>
         <!-- Search Field -->
-        <input class="weather-search form-input mb-2 col-8" type="text" id="history-input" placeholder="City"
+        <input class="weather-search form-input mb-2 " type="text" id="history-input" placeholder="City"
           aria-labelledby="form-heading" aria-controls="today forecast">
         <!-- Search Button -->
-        <button type="submit" class="search-button btn btn-info btn-sm col-3" id="add-history"
-          aria-label="submit search">
-          Search
-        </button>
+        <button class="search-button btn-primary btn-sm " id="add-history">Search</button>
 
         <!-- SEARCH HISTORY -->
         <!-- search history will be added here -->
 
-        <div id="history-view" class="list-group btn btn-info col-11">
+        <div id="history-view" class="col-12">
 
         </div>
 
@@ -46,7 +42,7 @@
       <div class="col-md-9 d-flex flex-column">
         <div class="row flex-grow-1">
           <!-- === RIGHT === UPPER === -->
-          <div class="col-md-12 bg-light min-vh-50" id="righttop">
+          <div class="col-md-12 min-vh-50" id="right-top">
          
                 <div class="result-city"></div>
                 <img id="wicon" src=""/>
@@ -57,7 +53,7 @@
                 
           </div>
           <!-- === RIGHT === LOWER === -->
-          <div class="col-md-12 bg-light min-vh-50" id="rightbottom">
+          <div class="col-md-12 min-vh-50" id="rightbottom">
             <div class="row">
               <h4>5-Day Forecast:</h4>
             </div>
@@ -65,7 +61,7 @@
             <div class="card-deck">
               <!-- Day 1 -->
               <div class="card">
-                  <div class="card-body">
+                  <div class="card-body bg-dark text-light">
                     <div class="result-city-1"></div>
                     <img id="wicon-1" src=""/>
                     <div class="result-tempC-1"></div>
@@ -75,7 +71,7 @@
               </div>
               <!-- Day 2 -->
               <div class="card">
-                  <div class="card-body">
+                  <div class="card-body bg-dark text-light">
                     <div class="result-city-2"></div>
                     <img id="wicon-2" src=""/>
                     <div class="result-tempC-2"></div>
@@ -85,7 +81,7 @@
               </div>
               <!-- Day 3 -->
               <div class="card">
-                  <div class="card-body">
+                  <div class="card-body bg-dark text-light">
                     <div class="result-city-3"></div>
                     <img id="wicon-3" src=""/>
                     <div class="result-tempC-3"></div>
@@ -95,7 +91,7 @@
               </div>
               <!-- Day 4 -->
               <div class="card">
-                  <div class="card-body">
+                  <div class="card-body bg-dark text-light">
                     <div class="result-city-4"></div>
                     <img id="wicon-4" src=""/>
                     <div class="result-tempC-4"></div>
@@ -105,7 +101,7 @@
               </div>
               <!-- Day 5 -->
               <div class="card">
-                  <div class="card-body">
+                  <div class="card-body bg-dark text-light">
                     <div class="result-city-5"></div>
                     <img id="wicon-5" src=""/>
                     <div class="result-tempC-5"></div>
@@ -121,7 +117,7 @@
       </div>
     </div>
   </div>
-  <footer class="bg-info text-center p-1">
+  <footer class="bg-dark text-light text-center p-1">
     <h5 class="text-white">Designed with 🤯 &copy; Shannon Yap 2022</h5>
   </footer>
   <!-- Moment.js -->
