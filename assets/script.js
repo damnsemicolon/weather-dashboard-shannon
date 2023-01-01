@@ -1,17 +1,21 @@
 
 // Initial array of histories
-var histories = ["London", "New York", "Hong Kong"];
+// var histories = ["London", "New York", "Hong Kong"];
+
+let localStorageData = JSON.parse(localStorage.getItem('histories'));
 
 // Function for displaying history data
 function renderButtons() {
 
   $('#history-view').empty();
-  for (var i = 0; i < histories.length; i++) {
-    var buttonEl = $('<button>');
-    buttonEl.addClass('history-btn ');
-    buttonEl.attr('data-name', histories[i]);
-    buttonEl.text(histories[i]);
-    $('#history-view').append(buttonEl);
+  if (localStorageData != null) {
+    for (var i = 0; i < localStorageData.length; i++) {
+      var buttonEl = $('<button>');
+      buttonEl.addClass('history-btn ');
+      buttonEl.attr('data-name', localStorageData[i]);
+      buttonEl.text(localStorageData[i]);
+      $('#history-view').append(buttonEl);
+    }
   }
 }
 
@@ -20,8 +24,14 @@ $("#add-history").on("click", function (event) {
 
   event.preventDefault();
   var history = $('#history-input').val().trim();
-  histories.push(history);
-
+  // histories.push(history);
+  if (localStorageData != null) {
+    localStorageData.push(history)
+  } else {
+    localStorageData=[]
+    localStorageData.push(history)
+  } 
+  localStorage.setItem('histories',JSON.stringify(localStorageData))
   renderButtons();
 });
 
@@ -56,13 +66,13 @@ function displaycityweather() {
     var tempCFeelsLike = response.main.feels_like - 273.15;
 
     // add temperature content to html
-    $(".result-tempC").text("Temperature: " + tempC.toFixed(1) + "°C");
-    $(".result-tempC-fl").text("Feels like: " + tempCFeelsLike.toFixed(1) + "°C");
+    $(".result-tempC").text("Temperature: " + tempC.toFixed(0) + "°C");
+    $(".result-tempC-fl").text("Feels like: " + tempCFeelsLike.toFixed(0) + "°C");
 
     // add humidity content to html
     $(".result-humidity").text("Humidity: " + response.main.humidity + "%");
     // add wind speed content to html
-    $(".result-wind").text("Wind Speed: " + response.wind.speed + " KPH");
+    $(".result-wind").text("Wind Speed: " + response.wind.speed.toFixed(1) + " KPH");
 
     // Icon
     var iconcode = response.weather[0].icon;
@@ -74,6 +84,7 @@ function displaycityweather() {
     url: queryURL2,
     method: "GET"
   }).then(function (response2) {
+    console.log(response2);
     // for loop to display 5 day forecast into cards
     for (var i = 0; i < 5; i++) {
       var day = response2.list[i * 8];
@@ -91,7 +102,7 @@ function displaycityweather() {
       // Humidity
       $(".result-humidity-" + (i + 1)).text("Humidity: " + day.main.humidity + "%");
       // Wind
-      $(".result-wind-" + (i + 1)).text("Wind: " + day.wind.speed + " KPH");
+      $(".result-wind-" + (i + 1)).text("Wind: " + day.wind.speed.toFixed(1) + " KPH");
     }
 
   });
@@ -99,29 +110,29 @@ function displaycityweather() {
 // Adding a click event listener to all elements with a class of "history-btn"
 $(document).on("click", ".history-btn", displaycityweather);
 
-// Get the search form
-const searchForm = document.querySelector('form');
-
-// Add an event listener to the form
-searchForm.addEventListener('.add-history', function(event) {
-  // Prevent the form from being submitted
-  event.preventDefault();
-
-  // Get the value of the search input
-  const searchTerm = searchInput.value;
-
-  // Check if local storage is supported by the browser
-  if (typeof(Storage) !== "undefined") {
-    // Get the existing search history from local storage
-    let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
-
-    // Add the new search term to the search history
-    searchHistory.push(searchTerm);
-
-    // Update the search history in local storage
-    localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
-
-    // Display the search history
-    displaySearchHistory();
-  }
+// ===== CLEAR LOCAL STORAGE =====
+const clearHistory = document.getElementById("clear-history-btn");
+clearHistory.addEventListener("click", function() {
+  localStorage.clear();
 });
+// ======= LOCAL STORAGE ====== //
+// // Get the search button element
+// var searchButton = document.querySelector('#add-history');
+
+// // Add an event listener to the search button
+// searchButton.addEventListener('click', function() {
+//   // Get the search input element
+//   var searchInput = document.querySelector('#history-input');
+
+//   // Get the value of the search input
+//   var searchTerm = searchInput.value;
+
+//   // Store the search term in local storage
+//   localStorage.setItem('searchTerm', searchTerm);
+// });
+
+// // Get the search term from local storage
+// const searchTerm = localStorage.getItem('searchTerm');
+
+// // Add the search term to the histories array
+// histories.push(searchTerm);

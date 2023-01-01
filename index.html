@@ -20,29 +20,33 @@
   <div class="container-fluid">
     <div class="row">
       <!-- === LEFT === PART === -->
-      <div class="col-md-3 min-vh-100" id="left">
+      <div class="col-md-3 " id="left">
         <h4 id="form-heading" class="mt-1 form-label">
           Search for a City:
         </h4>
-        <!-- Search Field -->
-        <input class="weather-search form-input mb-2 " type="text" id="history-input" placeholder="City"
-          aria-labelledby="form-heading" aria-controls="today forecast">
-        <!-- Search Button -->
-        <button class="search-button btn-primary btn-sm " id="add-history">Search</button>
+        <!-- Search Field and Button -->
+
+        <div class="input-group mb-3">
+          <input type="text" class="weather-search form-control" id="history-input" placeholder="City">
+          <div class="input-group-append">
+            <button class="search-button btn btn-primary" id="add-history" type="submit">Search</button>
+          </div>
+        </div>
+       
 
         <!-- SEARCH HISTORY -->
         <!-- search history will be added here -->
 
-        <div id="history-view" class="col-12">
+        <div id="history-view" >
 
         </div>
-
+        <button id="clear-history-btn">Clear History</button>
       </div>
       <!-- === RIGHT === PART === -->
       <div class="col-md-9 d-flex flex-column">
         <div class="row flex-grow-1">
           <!-- === RIGHT === UPPER === -->
-          <div class="col-md-12 min-vh-50" id="right-top">
+          <div class="col-md-12" id="right-top">
          
                 <div class="result-city"></div>
                 <img id="wicon" src=""/>
@@ -53,7 +57,7 @@
                 
           </div>
           <!-- === RIGHT === LOWER === -->
-          <div class="col-md-12 min-vh-50" id="rightbottom">
+          <div class="col-md-12" id="rightbottom">
             <div class="row">
               <h4>5-Day Forecast:</h4>
             </div>
