@@ -24,12 +24,12 @@ N/A
 
 Search for a city and you'll be presented with current and future conditions for that city and that city is added to the search history:
 
-The city name
-The date
-An icon representation of weather conditions
-The temperature
-The humidity
-The wind speed
+* The city name
+* The date
+* An icon representation of weather conditions
+* The temperature
+* The humidity
+* The wind speed
 
 Bonus... you can clear the saved events by clicking the grey "Clear History" button.
 
