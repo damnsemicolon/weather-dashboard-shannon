@@ -1,7 +1,3 @@
-
-// Initial array of histories
-// var histories = ["London", "New York", "Hong Kong"];
-
 let localStorageData = JSON.parse(localStorage.getItem('histories'));
 
 // Function for displaying history data
@@ -19,7 +15,7 @@ function renderButtons() {
   }
 }
 
-// This function handles events where one button is clicked
+// This function handles events where search button is clicked
 $("#add-history").on("click", function (event) {
 
   event.preventDefault();
@@ -28,10 +24,10 @@ $("#add-history").on("click", function (event) {
   if (localStorageData != null) {
     localStorageData.push(history)
   } else {
-    localStorageData=[]
+    localStorageData = []
     localStorageData.push(history)
-  } 
-  localStorage.setItem('histories',JSON.stringify(localStorageData))
+  }
+  localStorage.setItem('histories', JSON.stringify(localStorageData))
   renderButtons();
 });
 
@@ -79,12 +75,14 @@ function displaycityweather() {
     var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
     $('#wicon').attr('src', iconurl);
   })
+
   // FIVE-DAY FORECAST
   $.ajax({
     url: queryURL2,
     method: "GET"
   }).then(function (response2) {
     console.log(response2);
+    
     // for loop to display 5 day forecast into cards
     for (var i = 0; i < 5; i++) {
       var day = response2.list[i * 8];
@@ -104,35 +102,14 @@ function displaycityweather() {
       // Wind
       $(".result-wind-" + (i + 1)).text("Wind: " + day.wind.speed.toFixed(1) + " KPH");
     }
-
   });
 }
+
 // Adding a click event listener to all elements with a class of "history-btn"
 $(document).on("click", ".history-btn", displaycityweather);
 
-// ===== CLEAR LOCAL STORAGE =====
+// Button to clear local storage
 const clearHistory = document.getElementById("clear-history-btn");
-clearHistory.addEventListener("click", function() {
+clearHistory.addEventListener("click", function () {
   localStorage.clear();
 });
-// ======= LOCAL STORAGE ====== //
-// // Get the search button element
-// var searchButton = document.querySelector('#add-history');
-
-// // Add an event listener to the search button
-// searchButton.addEventListener('click', function() {
-//   // Get the search input element
-//   var searchInput = document.querySelector('#history-input');
-
-//   // Get the value of the search input
-//   var searchTerm = searchInput.value;
-
-//   // Store the search term in local storage
-//   localStorage.setItem('searchTerm', searchTerm);
-// });
-
-// // Get the search term from local storage
-// const searchTerm = localStorage.getItem('searchTerm');
-
-// // Add the search term to the histories array
-// histories.push(searchTerm);

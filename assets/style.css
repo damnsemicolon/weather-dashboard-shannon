@@ -1,5 +1,3 @@
-
-
 /* CSS */
 .history-btn {
   display: flex;
@@ -19,38 +17,38 @@
 }
 
 .history-btn:hover {
-    background: #0275d8;
-    background-origin: border-box;
-    transition: 0.7s;
+  background: #0275d8;
+  background-origin: border-box;
+  transition: 0.7s;
 }
 
 #clear-history-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 6px 30px;
-    width: 100%;
-    border-radius: 6px;
-    border: none;
-    margin-bottom: 10px;
-    color: #fff;
-    background: #9fa6ac;
-    background-origin: border-box;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 30px;
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 10px;
+  color: #fff;
+  background: #9fa6ac;
+  background-origin: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
 
-  #clear-history-btn:hover {
-    background: #7d8286;
-    background-origin: border-box;
-    transition: 0.7s;
+#clear-history-btn:hover {
+  background: #7d8286;
+  background-origin: border-box;
+  transition: 0.7s;
 }
 
 #right-top {
-    border: solid 1px black;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  border: solid 1px black;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
