@@ -108,7 +108,7 @@ function displaycityweather() {
 // Adding a click event listener to all elements with a class of "history-btn"
 $(document).on("click", ".history-btn", displaycityweather);
 
-// Button to clear local storage
+// Button to clear local storage.
 const clearHistory = document.getElementById("clear-history-btn");
 clearHistory.addEventListener("click", function () {
   localStorage.clear();
