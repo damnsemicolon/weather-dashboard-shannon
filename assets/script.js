@@ -1,4 +1,5 @@
-let localStorageData = JSON.parse(localStorage.getItem('histories'));
+
+var localStorageData = JSON.parse(localStorage.getItem('histories'));
 
 // Function for displaying history data
 function renderButtons() {
